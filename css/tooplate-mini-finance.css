@@ -34,7 +34,7 @@ https://www.tooplate.com/view/2135-mini-finance
   --p-font-size:                  18px;
   --menu-font-size:               14px;
   --btn-font-size:                12px;
-  --copyright-font-size:          10px;
+  --copyright-font-size:          17px;
 
   --border-radius-large:          100px;
   --border-radius-medium:         20px;
@@ -959,6 +959,7 @@ strong {
 
 .copyright-text {
   font-size: var(--copyright-font-size);
+  color: #555555;
 }
 
 
@@ -1147,3 +1148,30 @@ strong {
   }
 }
 
+/* Default footer (desktop) */
+.site-footer {
+  padding: 25px;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 16px;
+  color: #333333; /* improved contrast */
+}
+
+/* Tablet adjustments (below 991px) */
+@media screen and (max-width: 991px) {
+  .copyright-text {
+    font-size: 14px; /* slightly smaller */
+    line-height: 1.4;
+  }
+}
+
+/* Mobile adjustments (below 480px) */
+@media screen and (max-width: 480px) {
+  .copyright-text {
+    font-size: 12px; /* shrink for small screens */
+    padding: 0 10px; /* reduce side padding */
+    display: block; /* stack neatly */
+  }
+}
