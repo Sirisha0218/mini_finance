@@ -214,6 +214,48 @@ Once you've made your LinkedIn post:
 
 ---
 
+## Footer Date Dynamic Update
+
+I updated the footer of the Mini Finance App to display the **current date dynamically**.  
+This ensures users always see the latest deployment date without manual updates.
+
+---
+
+### Footer HTML
+
+```html
+<p class="copyright-text">
+  Copyright © Mini Finance 2048 Mini Finance v1.0 — 
+  Deployed on <span id="footer-date"></span> — By Sirisha Molugu
+</p>
+```
+
+```javascript
+// Update the footer with the current date
+const today = new Date();
+const options = { day: 'numeric', month: 'short', year: 'numeric' };
+document.getElementById('footer-date').textContent =
+  today.toLocaleDateString('en-GB', options);
+  ```
+
+
+### **Steps to deploy**  
+1. Stage and commit your changes:
+🔹git add index.html footer.js README.md
+🔹git commit -m "Made footer date dynamic"
+🔹git push origin main
+
+2. On your EC2 instance:
+🔹cd /usr/share/nginx/html   # or your app folder
+🔹git pull origin main
+🔹sudo systemctl restart nginx
+
+3. Verify on the public URL that the footer shows today's date.
+
+### Screenshot:
+![Footer displaying dynamic date](./images/footer-date.jpeg)
+
+
 ### **🎯 Final Thought**  
 💡 **Learning is great, but showcasing your skills is even better!** By sharing your achievement, you're taking a **big step towards building your professional reputation** in the industry.  
 
